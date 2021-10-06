@@ -4,7 +4,7 @@ project(SDL_mixer C)
 # FIXME: missing CMakeLists.txt for MPG123
 set(SUPPORT_MP3_MPG123 OFF CACHE BOOL "" FORCE)
 
-option(SUPPORT_FLAC "Support loading FLAC music with libFLAC" ON)
+option(SUPPORT_FLAC "Support loading FLAC music with libFLAC" OFF)
 option(SUPPORT_OGG "Support loading OGG Vorbis music via Tremor" ON)
 option(SUPPORT_MP3_MPG123 "Support loading MP3 music via MPG123" ON)
 option(SUPPORT_MOD_MODPLUG "Support loading MOD music via modplug" OFF)
@@ -12,7 +12,7 @@ option(SUPPORT_MID_TIMIDITY "Support TiMidity" OFF)
 
 include_directories(include src src/codecs)
 
-add_library(SDL2_mixer SHARED)
+add_library(SDL2_MIXER SHARED)
 
 target_sources(SDL2_mixer PRIVATE
         src/effect_position.c src/effects_internal.c src/effect_stereoreverse.c
