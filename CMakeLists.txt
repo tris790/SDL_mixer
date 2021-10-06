@@ -12,7 +12,7 @@ option(SUPPORT_MID_TIMIDITY "Support TiMidity" OFF)
 
 include_directories(include src src/codecs)
 
-add_library(SDL2_MIXER SHARED)
+add_library(SDL2_MIXER)
 
 target_sources(SDL2_MIXER PRIVATE
         src/effect_position.c src/effects_internal.c src/effect_stereoreverse.c
