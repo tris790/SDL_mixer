@@ -10,7 +10,8 @@ option(SUPPORT_MP3_MPG123 "Support loading MP3 music via MPG123" ON)
 option(SUPPORT_MOD_MODPLUG "Support loading MOD music via modplug" OFF)
 option(SUPPORT_MID_TIMIDITY "Support TiMidity" OFF)
 
-include_directories(include src src/codecs)
+option(SDL_PATH "SDL path" undefined)
+include_directories(include src src/codecs ${SDL_PATH}/include)
 
 add_library(SDL2_MIXER)
 
@@ -60,4 +61,5 @@ if (SUPPORT_MID_TIMIDITY)
 endif()
 
 target_include_directories(SDL2_MIXER PUBLIC include)
+target_link_libraries(SDL2_MIXER PRIVATE msvcrt)
 target_link_libraries(SDL2_MIXER PRIVATE SDL2)
